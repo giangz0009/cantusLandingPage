@@ -158,7 +158,7 @@
 #slider {
   height: var(--slider-height);
   width: 100%;
-  background: black ("./Assets/Images/slider/slider1.jpg") no-repeat;
+  background: black ("Assets/Images/slider/slider1.jpg") no-repeat;
   overflow-y: hidden;
 }
 
