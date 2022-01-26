@@ -158,7 +158,7 @@
 #slider {
   height: var(--slider-height);
   width: 100%;
-  background: black ("Assets/Images/slider/slider1.jpg") no-repeat;
+  background: black no-repeat;
   overflow-y: hidden;
 }
 
@@ -490,7 +490,7 @@
 /* Page adds */
 #news .page-adds {
   margin-top: 100px;
-  background: black url("/Assets/Images/YDN4IXOEP4.jpg") no-repeat;
+  background: black no-repeat;
   height: 370px;
 }
 
@@ -730,7 +730,7 @@
 
 /* App download */
 #assets .app-download {
-  background: black url("/Assets/Images/background.jpg") no-repeat center;
+  background: black no-repeat center;
   height: 350px;
   padding-inline: 210px;
   padding-block: 80px;
