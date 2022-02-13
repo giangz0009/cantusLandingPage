@@ -73,8 +73,18 @@ menuBarOpenBtn.addEventListener("touchend", function () {
   menuBarModal.classList.toggle("header-menu-bar__modal--close");
 });
 
-menuBarMask.addEventListener("touchend", function () {
-  menuBarModal.classList.toggle("header-menu-bar__modal--close");
+menuBarMask.addEventListener("touchstart", function () {
+  this.ontouchmove = () => {
+    this.ontouchend = () => {
+      // Not thing when scroll on Menu Bar
+    };
+  };
+});
+
+menuBarMask.addEventListener("touchstart", function () {
+  this.ontouchend = () => {
+    menuBarModal.classList.toggle("header-menu-bar__modal--close");
+  };
 });
 
 Array.from(menuBarMultiLevels).forEach(function (menuBarMultiLevel) {
