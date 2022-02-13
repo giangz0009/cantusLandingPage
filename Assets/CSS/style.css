@@ -3,20 +3,191 @@
 #header {
   width: 100%;
   background-color: var(--primary-color);
-  padding-inline: 50px;
+  padding-inline: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--header-height);
+}
+
+/* Menu bar */
+#header .header-menu-bar__icon {
+  font-size: 2.2rem;
+  color: var(--white-color);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+#header .header-menu-bar__icon:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+#header .header-menu-bar__modal {
+  color: var(--white-color);
+}
+
+#header .header-menu-bar__wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  max-width: 80%;
+  min-width: 280px;
+  height: 100vh;
+  -webkit-backface-visibility: hidden;
+  z-index: 12;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+#header .header-menu-bar__modal--close .header-menu-bar__wrap {
+  transform: translateX(-100%);
+}
+
+#header .header-menu-bar__modal--close .header-menu-bar-mask {
+  visibility: hidden;
+  opacity: 0;
+}
+
+#header .header-menu-bar__list {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#header .header-menu-bar__close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  transition: all 0.2s;
+  font-size: 1.8rem;
+}
+
+#header .header-menu-bar__close-btn:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+#header .header-menu-bar__item {
+  transition: all 0.2s;
+  overflow: hidden;
+}
+
+#header .header-menu-bar__link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--white-color);
+  padding: 10px 15px;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  width: 100%;
+}
+
+#header .header-menu-bar__link--purchase {
+  transition: all 0.2s;
+  transform-origin: center left;
+}
+
+#header .header-menu-bar__item:hover .header-menu-bar__link--purchase {
+  transform: scale(1.2);
+}
+
+#header .header-menu-bar__link > i {
+  font-size: 1.8rem;
+}
+
+#header .header-menu-bar__link > span {
+  margin-left: 0.5rem;
+}
+
+#header .header-menu-bar__link.header-menu-bar__link--purchase {
+  background-color: rgba(var(--primary-color-rgb), 1);
+}
+
+#header
+  .header-menu-bar__item:not(.header-menu-bar__item--multi-level-menu):hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#header .header-menu-bar__item--multi-level-menu > span {
+  cursor: pointer;
+  position: relative;
+}
+
+#header .header-menu-bar__item--multi-level-menu > span::after {
+  content: " ";
+  display: block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 40%;
+  right: 10px;
+  border: 3px solid var(--white-color);
+  transform: rotate(45deg) translateX(-50%);
+  border-top: none;
+  border-left: none;
+  transition: all 0.2s;
+}
+
+#header .header-menu-bar__item--down > span.header-menu-bar__link::after {
+  transform: rotate(225deg);
+}
+
+#header .header-menu-bar__item--multi-level-menu > span:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#header
+  .header-menu-bar__item--multi-level-menu
+  > .header-menu-bar__menu
+  .header-menu-bar__link {
+  padding-inline: 30px;
+}
+
+#header
+  .header-menu-bar__item.header-menu-bar__item--multi-level-menu
+  > .header-menu-bar__menu {
+  transition: all 0.2s;
+  max-height: 0;
+}
+
+#header
+  .header-menu-bar__item.header-menu-bar__item--down
+  > .header-menu-bar__menu {
+  max-height: 500px;
+}
+
+#header .header-menu-bar-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+  z-index: 10;
 }
 
 #header .header-menu {
   max-width: 1804px;
   width: 100%;
-  height: var(--header-height);
+  height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 /* Header menu main */
 #header .header-menu__main {
+  display: none;
   font-size: 0;
 }
 
@@ -83,9 +254,24 @@
   display: block;
 }
 
+/* Header Logo */
+#header .header-menu__logo {
+  padding-block: 5px;
+}
+
+#header .header-menu__logo,
+#header .header-menu__logo-link,
+#header .header-menu__logo-link img {
+  height: 100%;
+}
+
+#header .header-menu__logo-link {
+  display: inline-block;
+}
+
 /* Header menu social */
 #header .header-menu__social {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
 }

@@ -48,3 +48,37 @@ function loop() {
 audio.onplay = () => {
   context.resume();
 };
+
+// Add event for Header menu bar
+const menuBar = document.querySelector("#header .header-menu-bar");
+const menuBarModal = menuBar.querySelector(".header-menu-bar__modal");
+const menuBarList = menuBarModal.querySelector(
+  ".header-menu-bar__wrap > .header-menu-bar__list"
+);
+const menuBarMultiLevels = menuBarList.querySelectorAll(
+  ".header-menu-bar__item--multi-level-menu"
+);
+
+const menuCloseBtn = menuBarModal.querySelector(
+  ".header-menu-bar__wrap > .header-menu-bar__close-btn"
+);
+const menuBarOpenBtn = menuBar.querySelector(".header-menu-bar__icon");
+const menuBarMask = menuBarModal.querySelector(".header-menu-bar-mask");
+
+menuCloseBtn.addEventListener("touchend", function () {
+  menuBarModal.classList.toggle("header-menu-bar__modal--close");
+});
+
+menuBarOpenBtn.addEventListener("touchend", function () {
+  menuBarModal.classList.toggle("header-menu-bar__modal--close");
+});
+
+menuBarMask.addEventListener("touchend", function () {
+  menuBarModal.classList.toggle("header-menu-bar__modal--close");
+});
+
+Array.from(menuBarMultiLevels).forEach(function (menuBarMultiLevel) {
+  menuBarMultiLevel.ontouchend = function () {
+    this.classList.toggle("header-menu-bar__item--down");
+  };
+});
