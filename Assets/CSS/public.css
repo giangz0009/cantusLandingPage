@@ -87,7 +87,7 @@ a:active {
   color: var(--primary-color);
   border-radius: 8px;
   font-size: 1.6rem;
-  padding: 14px 37px;
+  padding: 14px 22px;
   transition: all 0.2s;
 }
 

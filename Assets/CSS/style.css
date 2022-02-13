@@ -19,6 +19,7 @@
   align-items: center;
   justify-content: center;
   transition: all 0.2s;
+  padding: 10px;
 }
 
 #header .header-menu-bar__icon:hover {
@@ -342,6 +343,7 @@
 
 /* Slider */
 #slider {
+  display: none;
   height: var(--slider-height);
   width: 100%;
   background: black no-repeat;
@@ -475,11 +477,8 @@
 }
 
 /* Content */
-#content {
-  padding-top: 16px;
-}
 #content > section {
-  margin-top: 104px;
+  margin-top: 50px;
 }
 
 /* Trending */
@@ -541,6 +540,7 @@
   margin-inline: 15px;
   padding-top: 30px;
   padding-bottom: 5px;
+  overflow-y: hidden;
 }
 
 #upcoming .upcoming-wrap::-webkit-scrollbar-track {
@@ -579,6 +579,7 @@
   width: calc(100% / var(--quantily-upcoming));
   display: flex;
   flex-wrap: wrap;
+  margin-left: 1px;
 }
 
 #upcoming .upcoming-img {
@@ -620,11 +621,6 @@
   opacity: 1;
 }
 
-#upcoming .upcoming-info {
-  padding-inline: 50px;
-  padding-block: 20px;
-}
-
 #upcoming .upcoming-info__heading {
   font-size: 2.2rem;
   margin-bottom: 15px;
@@ -660,6 +656,7 @@
 
 /* latest */
 #latest {
+  margin-top: 50px;
   position: relative;
 }
 
@@ -675,13 +672,24 @@
 
 /* Page adds */
 #news .page-adds {
-  margin-top: 100px;
+  margin-top: 50px;
   background: black no-repeat;
   height: 370px;
+  background-position: right;
 }
 
 #news .page-content {
-  padding: 85px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  padding-inline: 20px;
+  text-align: center;
+}
+
+#news .page-title {
+  margin-bottom: 10px;
 }
 
 #news .page-title {
@@ -778,13 +786,9 @@
 
 #popular .radio-music-info {
   width: 100%;
-  padding-left: 135px;
-  padding-right: 30px;
-}
-
-#popular .radio-music-info {
+  padding-top: 5px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
 }
 
@@ -817,6 +821,7 @@
 #popular .radio-music-primary-info {
   display: flex;
   align-items: center;
+  padding-top: 5px;
 }
 
 #popular .radio-music-primary-info__item {
@@ -856,7 +861,6 @@
   flex-wrap: wrap;
   flex-direction: column;
   font-size: 0;
-  padding-left: 8px;
 }
 
 #popular .music-item {
@@ -865,7 +869,6 @@
   margin-left: 15px;
   line-height: 40px;
   font-size: 1.3rem;
-  width: 200px;
   position: relative;
   transition: all 0.2s;
 }
@@ -891,6 +894,10 @@
 }
 
 /* instagram */
+#instagram {
+  margin-top: 50px;
+}
+
 #instagram .instagram-img {
   width: 100%;
   margin-top: 30px;
@@ -918,12 +925,14 @@
 #assets .app-download {
   background: black no-repeat center;
   height: 350px;
-  padding-inline: 210px;
-  padding-block: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin-top: 85px;
+  background-size: cover;
+  background-position: right;
+  padding-inline: 10px;
 }
 
 #assets .app-download__heading {
@@ -938,6 +947,7 @@
 
 #assets .app-download__heading p {
   font-size: 2rem;
+  margin-top: 5px;
 }
 
 #assets .app-download__links {
@@ -954,7 +964,7 @@
   background-color: black;
   border-radius: 6px;
   height: 50px;
-  width: 162px;
+  width: 150px;
 }
 
 #assets .app-download__links-text {
@@ -971,11 +981,11 @@
 }
 
 #assets .subscribe {
-  width: 570px;
+  width: 100%;
   height: 50px;
   margin-inline: auto;
-  margin-top: 120px;
-  margin-bottom: 70px;
+  margin-top: 60px;
+  margin-bottom: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1042,7 +1052,7 @@
 /* footer */
 #footer {
   border-top: 1px solid var(--white-blur-color);
-  padding-block: 70px;
+  padding-block: 20px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -1050,6 +1060,10 @@
 
 #footer .footer-menu__list {
   font-size: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 #footer .footer-menu__item {
@@ -1079,6 +1093,7 @@
 #footer .footer-source p {
   font-size: 1.3rem;
   padding: 5px 10px;
+  text-align: center;
 }
 
 #footer .footer-source p span {

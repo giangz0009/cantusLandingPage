@@ -35,4 +35,81 @@
   #header .header-menu__logo-link {
     display: inline-block;
   }
+
+  #slider {
+    display: block;
+  }
+
+  #content {
+    padding-top: 16px;
+  }
+
+  #content > section {
+    margin-top: 104px;
+  }
+
+  #upcoming .upcoming-info {
+    padding: 20px 50px;
+  }
+
+  #latest {
+    margin-top: 0;
+  }
+
+  #news .page-adds {
+    margin-top: 100px;
+    background-position: left;
+  }
+
+  #news .page-content {
+    padding: 85px 100px;
+  }
+
+  #instagram {
+    margin-top: 0;
+  }
+
+  #popular .radio-music-info {
+    padding-top: 0;
+    padding-left: 135px;
+    padding-right: 30px;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  #popular .radio-music-primary-info {
+    padding-top: 0;
+  }
+
+  #popular .music-list {
+    padding-left: 8px;
+  }
+
+  #popular .music-item {
+    width: 200px;
+  }
+
+  #assets .app-download {
+    background-position: center;
+    padding-inline: 210px;
+    padding-block: 80px;
+  }
+
+  #assets .app-download__links-btn {
+    width: 162px;
+  }
+
+  #assets .subscribe {
+    width: 570px;
+    margin-bottom: 70px;
+    margin-top: 120px;
+  }
+
+  #footer {
+    padding-block: 70px;
+  }
+
+  .btn {
+    padding: 14px 37px;
+  }
 }
