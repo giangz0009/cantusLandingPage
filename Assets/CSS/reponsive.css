@@ -59,6 +59,7 @@
   #news .page-adds {
     margin-top: 100px;
     background-position: left;
+    height: 370px;
   }
 
   #news .page-content {
@@ -89,10 +90,16 @@
     width: 200px;
   }
 
+  #popular .radio__img {
+    width: 120px;
+    height: 120px;
+  }
+
   #assets .app-download {
     background-position: center;
     padding-inline: 210px;
     padding-block: 80px;
+    height: 350px;
   }
 
   #assets .app-download__links-btn {

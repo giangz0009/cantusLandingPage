@@ -92,3 +92,45 @@ Array.from(menuBarMultiLevels).forEach(function (menuBarMultiLevel) {
     this.classList.toggle("header-menu-bar__item--down");
   };
 });
+
+const headerSearch = document.querySelector(".header-search");
+const headerSearchToggleBtn = headerSearch.querySelector(".header-search__btn");
+const headerSearchInputWrap = headerSearch.querySelector(
+  ".header-search__input-wrap"
+);
+
+const headerSearchStartBtn = headerSearchInputWrap.querySelector(
+  ".header-search__input-search-icon"
+);
+let searchBoxIsOpen = false;
+
+headerSearchToggleBtn.ontouchend = toggleClassToSearchInput;
+
+headerSearchStartBtn.ontouchend = () => {
+  // Search Script
+  toggleClassToSearchInput();
+};
+
+function toggleClassToSearchInput() {
+  searchBoxIsOpen = !searchBoxIsOpen;
+  headerSearchInputWrap.classList.toggle(
+    "header-search__input-wrap--open",
+    searchBoxIsOpen
+  );
+}
+
+document.ontouchend = (e) => {
+  if (
+    searchBoxIsOpen &&
+    e.target !== headerSearchToggleBtn &&
+    e.target !== headerSearchToggleBtn.firstElementChild
+  ) {
+    let headerSearchInputWrapOpened = headerSearch.querySelector(
+      ".header-search__input-wrap.header-search__input-wrap--open"
+    );
+
+    if (!e.path.includes(headerSearchInputWrapOpened)) {
+      toggleClassToSearchInput();
+    }
+  }
+};
