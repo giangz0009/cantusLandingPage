@@ -177,6 +177,10 @@ a:active {
   margin-left: 6px;
 }
 
+.d-n {
+  display: none;
+}
+
 /* Animation */
 @keyframes rotateAnimation {
   from {

@@ -70,6 +70,11 @@
     margin-top: 0;
   }
 
+  #popular .radio-player {
+    padding-left: 16px;
+    padding-right: 30px;
+  }
+
   #popular .radio-music-info {
     padding-top: 0;
     padding-left: 135px;

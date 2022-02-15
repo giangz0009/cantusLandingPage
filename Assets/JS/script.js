@@ -134,3 +134,63 @@ document.ontouchend = (e) => {
     }
   }
 };
+
+// Show more for Trending
+const width = window.innerWidth > 0 ? window.innerWidth : screen.width;
+
+const trendingList = document.querySelector(".trending__list");
+const trendingItems = trendingList.querySelectorAll(".trending__item");
+const trendingShowMore = trendingList.querySelector(".trending__show-more-btn");
+const trendingShowLess = trendingList.querySelector(".trending__show-less-btn");
+
+const trendingItemsLength = Array.from(trendingItems).length;
+let qualityToShow = 4;
+
+if (width >= 575) qualityToShow = 6;
+if (width >= 768) qualityToShow = 8;
+
+if (trendingItemsLength > qualityToShow) {
+  trendingList.classList.add("trending__list--show-more");
+}
+
+Array.from(trendingItems).forEach(function (trendingItem, i) {
+  // Hide Elements > quality to Show
+  if (i >= qualityToShow) {
+    trendingItem.classList.add("d-n");
+  }
+});
+
+trendingShowMore.ontouchend = () => {
+  let trendingItemsHides = document.querySelectorAll(
+    "#trending .trending__item.d-n"
+  );
+
+  Array.from(trendingItemsHides).forEach(function (
+    trendingItemsHide,
+    i,
+    thisArray
+  ) {
+    const thisLength = thisArray.length;
+    const qualityToShowMore = 8;
+    if (i < qualityToShowMore) {
+      trendingItemsHide.classList.remove("d-n");
+    }
+
+    if (thisLength <= qualityToShow) {
+      trendingList.classList.add("trending__list--show-less");
+      trendingList.classList.remove("trending__list--show-more");
+    }
+  });
+};
+
+trendingShowLess.ontouchend = () => {
+  Array.from(trendingItems).forEach(function (trendingItem, i) {
+    // Hide Elements > quality to Show
+    if (i >= qualityToShow) {
+      trendingItem.classList.add("d-n");
+    }
+  });
+
+  trendingList.classList.remove("trending__list--show-less");
+  trendingList.classList.add("trending__list--show-more");
+};
