@@ -136,7 +136,7 @@ document.ontouchend = (e) => {
 };
 
 // Show more for Trending
-const width = window.innerWidth > 0 ? window.innerWidth : screen.width;
+let width = window.innerWidth > 0 ? window.innerWidth : screen.width;
 
 const trendingList = document.querySelector(".trending__list");
 const trendingItems = trendingList.querySelectorAll(".trending__item");
@@ -149,12 +149,42 @@ let qualityToShow = 4;
 if (width >= 575) qualityToShow = 6;
 if (width >= 768) qualityToShow = 8;
 
+window.addEventListener("resize", function () {
+  if (width !== window.innerWidth) width = window.innerWidth;
+
+  if (width < 574) qualityToShow = 4;
+  if (width >= 575) qualityToShow = 6;
+  if (width >= 768) qualityToShow = 8;
+
+  trendingList.classList.toggle(
+    "trending__list--show-more",
+    trendingItemsLength > qualityToShow
+  );
+
+  Array.from(trendingItems).forEach(function (trendingItem, i) {
+    // Hide Elements > quality to Show
+    if (i < qualityToShow) {
+      if (trendingItem.classList.contains("d-n")) {
+        trendingItem.classList.remove("d-n");
+      }
+    }
+    if (i >= qualityToShow) {
+      trendingItem.classList.add("d-n");
+    }
+  });
+});
+
 if (trendingItemsLength > qualityToShow) {
   trendingList.classList.add("trending__list--show-more");
 }
 
 Array.from(trendingItems).forEach(function (trendingItem, i) {
   // Hide Elements > quality to Show
+  if (i < qualityToShow) {
+    if (trendingItem.classList.contains("d-n")) {
+      trendingItem.classList.remove("d-n");
+    }
+  }
   if (i >= qualityToShow) {
     trendingItem.classList.add("d-n");
   }
